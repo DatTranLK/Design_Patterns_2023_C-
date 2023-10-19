@@ -1,0 +1,15 @@
+E:\Training Myself\Design Patterns\DesignPatterns2023\DesignPatterns2023\bin\Debug\net6.0\DesignPatterns2023.exe
+E:\Training Myself\Design Patterns\DesignPatterns2023\DesignPatterns2023\bin\Debug\net6.0\DesignPatterns2023.deps.json
+E:\Training Myself\Design Patterns\DesignPatterns2023\DesignPatterns2023\bin\Debug\net6.0\DesignPatterns2023.runtimeconfig.json
+E:\Training Myself\Design Patterns\DesignPatterns2023\DesignPatterns2023\bin\Debug\net6.0\DesignPatterns2023.dll
+E:\Training Myself\Design Patterns\DesignPatterns2023\DesignPatterns2023\bin\Debug\net6.0\DesignPatterns2023.pdb
+E:\Training Myself\Design Patterns\DesignPatterns2023\DesignPatterns2023\obj\Debug\net6.0\DesignPatterns2023.csproj.AssemblyReference.cache
+E:\Training Myself\Design Patterns\DesignPatterns2023\DesignPatterns2023\obj\Debug\net6.0\DesignPatterns2023.GeneratedMSBuildEditorConfig.editorconfig
+E:\Training Myself\Design Patterns\DesignPatterns2023\DesignPatterns2023\obj\Debug\net6.0\DesignPatterns2023.AssemblyInfoInputs.cache
+E:\Training Myself\Design Patterns\DesignPatterns2023\DesignPatterns2023\obj\Debug\net6.0\DesignPatterns2023.AssemblyInfo.cs
+E:\Training Myself\Design Patterns\DesignPatterns2023\DesignPatterns2023\obj\Debug\net6.0\DesignPatterns2023.csproj.CoreCompileInputs.cache
+E:\Training Myself\Design Patterns\DesignPatterns2023\DesignPatterns2023\obj\Debug\net6.0\DesignPatterns2023.dll
+E:\Training Myself\Design Patterns\DesignPatterns2023\DesignPatterns2023\obj\Debug\net6.0\refint\DesignPatterns2023.dll
+E:\Training Myself\Design Patterns\DesignPatterns2023\DesignPatterns2023\obj\Debug\net6.0\DesignPatterns2023.pdb
+E:\Training Myself\Design Patterns\DesignPatterns2023\DesignPatterns2023\obj\Debug\net6.0\DesignPatterns2023.genruntimeconfig.cache
+E:\Training Myself\Design Patterns\DesignPatterns2023\DesignPatterns2023\obj\Debug\net6.0\ref\DesignPatterns2023.dll
