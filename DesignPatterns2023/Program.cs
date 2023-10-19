@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 
+using DesignPatterns2023.Facade;
 using DesignPatterns2023.Factory.NetworkFactory;
 using DesignPatterns2023.Factory.NetworkUtility;
 using DesignPatterns2023.Singleton;
@@ -18,11 +19,17 @@ if (object1 == object2)
 #endregion
 
 #region Factory Pattern
-NetworkFactory factory = new NetworkFactory();
+/*NetworkFactory factory = new NetworkFactory();
 var dns = factory.GetNetworkInstance("dns");
 var ping = factory.GetNetworkInstance("ping");
 var arp = factory.GetNetworkInstance("arp");
 dns.SendRequest("1.1.1", 1);
 ping.SendRequest("1.1.1", 1);
-arp.SendRequest("1.1.1", 1);
+arp.SendRequest("1.1.1", 1);*/
+#endregion
+
+#region Facade Pattern
+NetworkFacade networkFacade = new NetworkFacade("1.1.1.1", "UDP");
+networkFacade.BuildNetworkLayer();
+networkFacade.SendPacketOverNetwork();
 #endregion
