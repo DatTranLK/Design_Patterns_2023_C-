@@ -4,6 +4,7 @@
 using DesignPatterns2023.Adapter;
 using DesignPatterns2023.Adapter.DataProcessor;
 using DesignPatterns2023.Adapter.Network;
+using DesignPatterns2023.ChainOfResponsibility;
 using DesignPatterns2023.Facade;
 using DesignPatterns2023.Factory.NetworkFactory;
 using DesignPatterns2023.Factory.NetworkUtility;
@@ -50,6 +51,18 @@ adapter.SendRequest("8.8.8.8");*/
 #endregion
 
 #region Proxy Pattern
-ISuperSecretDatabase database = new SuperSecretDatabaseProxy("testdb", "Password");
-database.DisplayDatabaseName();
+/*ISuperSecretDatabase database = new SuperSecretDatabaseProxy("testdb", "Password");
+database.DisplayDatabaseName();*/
+#endregion
+
+#region Chain of Responsibility Pattern
+IChain obj1 = new SendSSH();
+IChain obj2 = new SendPing();
+IChain obj3 = new SendARP();
+
+obj1.SetNext(obj2);
+obj2.SetNext(obj3);
+
+NetworkModel request = new NetworkModel("8.8.8.8", false);
+obj1.SendRequest(request);
 #endregion
