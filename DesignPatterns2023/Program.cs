@@ -7,6 +7,7 @@ using DesignPatterns2023.Adapter.Network;
 using DesignPatterns2023.Facade;
 using DesignPatterns2023.Factory.NetworkFactory;
 using DesignPatterns2023.Factory.NetworkUtility;
+using DesignPatterns2023.Proxy;
 using DesignPatterns2023.Singleton;
 
 
@@ -38,12 +39,17 @@ networkFacade.SendPacketOverNetwork();*/
 #endregion
 
 #region Adapter Pattern
-INetworkClient network = new NetworkClient();
+/*INetworkClient network = new NetworkClient();
 network.SendRequest("1.1.1.1");
 
 IDataProcessor dataProc = new DataProcessor();
 dataProc.SendNetworkRequest("2.2.2.2", "23465gfhghg");
 
 NetworkAdapter adapter = new NetworkAdapter(dataProc);
-adapter.SendRequest("8.8.8.8");
+adapter.SendRequest("8.8.8.8");*/
+#endregion
+
+#region Proxy Pattern
+ISuperSecretDatabase database = new SuperSecretDatabaseProxy("testdb", "Password");
+database.DisplayDatabaseName();
 #endregion
