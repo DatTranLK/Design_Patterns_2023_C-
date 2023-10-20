@@ -10,6 +10,7 @@ using DesignPatterns2023.Factory.NetworkFactory;
 using DesignPatterns2023.Factory.NetworkUtility;
 using DesignPatterns2023.Proxy;
 using DesignPatterns2023.Singleton;
+using DesignPatterns2023.Strategy_Pattern;
 
 
 #region Singleton
@@ -56,7 +57,7 @@ database.DisplayDatabaseName();*/
 #endregion
 
 #region Chain of Responsibility Pattern
-IChain obj1 = new SendSSH();
+/*IChain obj1 = new SendSSH();
 IChain obj2 = new SendPing();
 IChain obj3 = new SendARP();
 
@@ -64,5 +65,15 @@ obj1.SetNext(obj2);
 obj2.SetNext(obj3);
 
 NetworkModel request = new NetworkModel("8.8.8.8", false);
-obj1.SendRequest(request);
+obj1.SendRequest(request);*/
+#endregion
+
+#region Strategy Pattern
+Context context = new Context(new DesignPatterns2023.Strategy_Pattern.ARP());
+Context contextTwo = new Context(new DesignPatterns2023.Strategy_Pattern.Ping());
+Context contextThree = new Context(new DesignPatterns2023.Strategy_Pattern.DNS());
+
+context.ExecuteStrategy();
+contextTwo.ExecuteStrategy();
+contextThree.ExecuteStrategy();
 #endregion
