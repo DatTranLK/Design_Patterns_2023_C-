@@ -4,6 +4,8 @@
 using DesignPatterns2023.Adapter;
 using DesignPatterns2023.Adapter.DataProcessor;
 using DesignPatterns2023.Adapter.Network;
+using DesignPatterns2023.Builder;
+using DesignPatterns2023.Builder.Models;
 using DesignPatterns2023.ChainOfResponsibility;
 using DesignPatterns2023.Facade;
 using DesignPatterns2023.Factory.NetworkFactory;
@@ -69,11 +71,26 @@ obj1.SendRequest(request);*/
 #endregion
 
 #region Strategy Pattern
-Context context = new Context(new DesignPatterns2023.Strategy_Pattern.ARP());
+/*Context context = new Context(new DesignPatterns2023.Strategy_Pattern.ARP());
 Context contextTwo = new Context(new DesignPatterns2023.Strategy_Pattern.Ping());
 Context contextThree = new Context(new DesignPatterns2023.Strategy_Pattern.DNS());
 
 context.ExecuteStrategy();
 contextTwo.ExecuteStrategy();
-contextThree.ExecuteStrategy();
+contextThree.ExecuteStrategy();*/
+#endregion
+
+#region Builder Pattern
+//Poor solution to generate a car object
+var car = new Car(4, new SeatBelt("DatTest"), "black", new Windscreen("DatTest"), new Engine("Foot"));
+Console.WriteLine(car.ToString());
+Console.WriteLine("------------------------------------");
+var carByBuilder = new CarBuilder()
+                        .AddWheels(4)
+                        .AddSeatBelts(new SeatBelt("DatTest"))
+                        .AddEngine(new Engine("DatTestEngine"))
+                        .AddWindscreen(new Windscreen("DatTestWindScreen"))
+                        .Paint("black")
+                        .Build();
+Console.WriteLine(carByBuilder.ToString());
 #endregion
