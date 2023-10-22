@@ -10,6 +10,8 @@ using DesignPatterns2023.ChainOfResponsibility;
 using DesignPatterns2023.Facade;
 using DesignPatterns2023.Factory.NetworkFactory;
 using DesignPatterns2023.Factory.NetworkUtility;
+using DesignPatterns2023.Observer.Models;
+using DesignPatterns2023.Observer.Notifiers;
 using DesignPatterns2023.Proxy;
 using DesignPatterns2023.Singleton;
 using DesignPatterns2023.Strategy_Pattern;
@@ -81,10 +83,11 @@ contextThree.ExecuteStrategy();*/
 #endregion
 
 #region Builder Pattern
-//Poor solution to generate a car object
+/*//Poor solution to generate a car object
 var car = new Car(4, new SeatBelt("DatTest"), "black", new Windscreen("DatTest"), new Engine("Foot"));
 Console.WriteLine(car.ToString());
 Console.WriteLine("------------------------------------");
+//Intermediate solution to generate a car object when using builder pattern
 var carByBuilder = new CarBuilder()
                         .AddWheels(4)
                         .AddSeatBelts(new SeatBelt("DatTest"))
@@ -92,5 +95,23 @@ var carByBuilder = new CarBuilder()
                         .AddWindscreen(new Windscreen("DatTestWindScreen"))
                         .Paint("black")
                         .Build();
-Console.WriteLine(carByBuilder.ToString());
+Console.WriteLine(carByBuilder.ToString());*/
+#endregion
+
+#region Observer Pattern
+var videoData = new VideoData();
+_ = new EmailNotifier(videoData);
+_ = new PhoneNotifier(videoData);
+var youtubeNotifier = new YoutubeNotifier(videoData);
+
+videoData.SetTitle("Observer Design Pattern");
+
+videoData.DetachObserver(youtubeNotifier);
+Console.WriteLine("-----------------------------");
+videoData.SetDescription("DatTest");
+
+_ = new FacebookNotifier(videoData);
+Console.WriteLine("-----------------------------");
+videoData.SetFileName("Test File Name");
+
 #endregion
