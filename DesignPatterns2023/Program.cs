@@ -7,6 +7,8 @@ using DesignPatterns2023.Adapter.Network;
 using DesignPatterns2023.Builder;
 using DesignPatterns2023.Builder.Models;
 using DesignPatterns2023.ChainOfResponsibility;
+using DesignPatterns2023.Decorator.Base;
+using DesignPatterns2023.Decorator.Decorator;
 using DesignPatterns2023.Facade;
 using DesignPatterns2023.Factory.NetworkFactory;
 using DesignPatterns2023.Factory.NetworkUtility;
@@ -99,7 +101,7 @@ Console.WriteLine(carByBuilder.ToString());*/
 #endregion
 
 #region Observer Pattern
-var videoData = new VideoData();
+/*var videoData = new VideoData();
 _ = new EmailNotifier(videoData);
 _ = new PhoneNotifier(videoData);
 var youtubeNotifier = new YoutubeNotifier(videoData);
@@ -112,6 +114,22 @@ videoData.SetDescription("DatTest");
 
 _ = new FacebookNotifier(videoData);
 Console.WriteLine("-----------------------------");
-videoData.SetFileName("Test File Name");
+videoData.SetFileName("Test File Name");*/
+
+#endregion
+
+#region Decorator Pattern
+var firstMilkTea = new EggPudding(
+                    new FruitPudding(
+                        new BlackSugar(
+                                new Bubble(
+                                    new MilkTea()))));
+Console.WriteLine("EggPuddingAndFruitPuddingBlackSugarBubbleMilkTea:\t" + firstMilkTea.Cost());
+
+var secondMilkTea = new EggPudding(
+                        new BlackSugar(
+                            new WhiteBubble(
+                                new MilkTea())));
+Console.WriteLine("EggPuddingBlackSugarWhiteBubbleMilkTea:\t" + secondMilkTea.Cost());
 
 #endregion
